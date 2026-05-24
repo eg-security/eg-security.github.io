@@ -226,13 +226,6 @@ label{display:block;color: var(--text-main);margin-bottom:6px;font-size:0.85rem;
     cursor: not-allowed;
     box-shadow: none;
 }
-.btn-submit-secure .icon-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-}
 
 footer{padding:60px 0 30px;background: var(--bg-card);border-top:1px solid var(--border-color);transition: background 0.4s ease;}
 .footer-content{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;margin-bottom:40px}
@@ -508,7 +501,7 @@ footer{padding:60px 0 30px;background: var(--bg-card);border-top:1px solid var(-
     </div>
     <div class="contact-card-details">
         <strong>محفظة فودافون كاش ورقم الفحص الفوري</strong>
-        <a href="https://wa.me/201030731993" target="_blank">+20 103 073 1993</a>
+        <a href="https://wa.me/201030731993" target="_blank" rel="noopener">+20 103 073 1993</a>
         <span>تدعم استقبال المدفوعات والمعاملات الفورية أوتوماتيكياً من كافة المحافظ والبنوك بمجرد إرفاق الرقم.</span>
     </div>
 </div>
@@ -519,34 +512,34 @@ footer{padding:60px 0 30px;background: var(--bg-card);border-top:1px solid var(-
     </div>
     <div class="contact-card-details">
         <strong>البريد الإلكتروني الرسمي للإدارة والنزاعات</strong>
-        <span id="secure-email-link">جاري تحميل بريد الإدارة الآمن...</span>
+        <span id="secure-email-link">جاري تحميل البريد الآمن...</span>
         <span>مخصص للمراسلات الرسمية والشركات ومتابعة حالات التشفير المعقدة.</span>
     </div>
 </div>
 
 <div style="margin-top:25px;text-align:center">
-<a href="https://wa.me/201030731993" target="_blank" class="btn btn-whatsapp" style="font-size:1rem;padding:15px;width:100%; margin:0"><i class="fa-brands fa-whatsapp"></i> فتح محادثة واتساب آلية ومباشرة</a>
+<a href="https://wa.me/201030731993" target="_blank" rel="noopener" class="btn btn-whatsapp" style="font-size:1rem;padding:15px;width:100%; margin:0"><i class="fa-brands fa-whatsapp"></i> فتح محادثة واتساب آلية ومباشرة</a>
 </div>
 </div>
 
 <div class="contact-form-wrapper">
 <h3>نموذج الطلب وتأكيد رسوم الفحص</h3>
 <form id="secureForm" action="https://formspree.io/f/mkoezyzk" method="POST">
-<div class="secure-gate-field">
-    <label>Don't fill this if you are human:</label>
-    <input type="text" name="_honey_trap">
+<div class="secure-gate-field" aria-hidden="true">
+    <label for="honey_trap">Don't fill this field if you are human:</label>
+    <input type="text" id="honey_trap" name="_honey_trap" autocomplete="off" tabindex="-1">
 </div>
 <input type="hidden" name="subject" value="🚨 طلب فحص سيبراني جديد - منصة EG">
 <div style="margin-bottom:15px">
-<label>الاسم بالكامل / الشركة</label>
-<input type="text" name="الاسم الكامل" required placeholder="أدخل اسمك الفعلي">
+<label for="client_name">الاسم بالكامل / الشركة</label>
+<input type="text" id="client_name" name="الاسم الكامل" required placeholder="أدخل اسمك الفعلي">
 </div>
 <div style="margin-bottom:15px">
-<label>بريدك الإلكتروني للمتابعة</label>
-<input type="email" name="بريد العميل" required placeholder="name@example.com">
+<label for="client_email">بريدك الإلكتروني للمتابعة</label>
+<input type="email" id="client_email" name="بريد العميل" required placeholder="name@example.com">
 </div>
 <div style="margin-bottom:15px">
-<label>نوع الخدمة أو الباقة المستهدفة</label>
+<label for="serviceSelect">نوع الخدمة أو الباقة المستهدفة</label>
 <select name="نوع الخدمة المطلوبة" id="serviceSelect" required>
 <option value="">-- يرجى اختيار القسم --</option>
 <option value="Initial Analysis (100$)">جلسة فحص واستشارة أولية (100$)</option>
@@ -560,8 +553,8 @@ footer{padding:60px 0 30px;background: var(--bg-card);border-top:1px solid var(-
 </div>
 
 <div style="margin-bottom:15px">
-<label>شرح وتحليل تفصيلي للمشكلة (متى وكيف حدثت؟)</label>
-<textarea name="تفاصيل المشكلة بالكامل" required rows="4" placeholder="اكتب تفاصيل الاختراق، والرسائل المزعجة التي تظهر لك لنقوم بالتحليل الفوري..."></textarea>
+<label for="problem_details">شرح وتحليل تفصيلي للمشكلة (متى وكيف حدثت؟)</label>
+<textarea id="problem_details" name="تفاصيل المشكلة بالكامل" required rows="4" placeholder="اكتب تفاصيل الاختراق، والرسائل المزعجة التي تظهر لك لنقوم بالتحليل الفوري..."></textarea>
 </div>
 
 <div class="v-cash-gate" id="vcashGateway">
@@ -569,13 +562,13 @@ footer{padding:60px 0 30px;background: var(--bg-card);border-top:1px solid var(-
 <p style="font-size:0.8rem;margin-bottom:8px;font-weight:600">لتفعيل الطلب وبدء الفحص أوتوماتيكياً، يرجى إرسال قيمة الباقة المقابلة أو رسوم جلسة الفحص إلى رقم محفظتنا المباشر بالأسفل:</p>
 <div class="v-cash-num-box">01030731993</div>
 <div style="margin-top:10px">
-<label style="font-size:0.8rem">أدخل الرقم الذي قمت بالتحويل منه لتأكيد العملية والربط التلقائي في الخادم:</label>
-<input type="text" name="رقم تحويل فودافون كاش" placeholder="01xxxxxxxxx">
+<label for="vcash_number" style="font-size:0.8rem">أدخل الرقم الذي قمت بالتحويل منه لتأكيد العملية والربط التلقائي في الخادم:</label>
+<input type="text" id="vcash_number" name="رقم تحويل فودافون كاش" placeholder="01xxxxxxxxx" pattern="01[0-2,5]\d{8}">
 </div>
 </div>
 
 <div class="legal-box">
-<h3><i class="fa-solid fa-gavel"></i> اتفاقية إخلاء المسؤولية القانونية والشروط العامة</h3>
+<h3><i class="fa-solid fa-gavel"></i> اتفـاقية إخلاء المسؤولية القـانونية والشروط العامة</h3>
 <div class="legal-text">
 إن موقع منصة EG Security وإدارتها ومطوريها ومهندسيها غير مسؤولين بصفة مطلقة، مباشرة أو غير مباشرة، عن أي استخدام خاطئ، أو ضرر، أو خسارة في البيانات، أو تبعات مدنية أو جنائية تنشأ عن طلب خدمات الأمن السيبراني أو الاسترداد الفني المتاحة عبر هذا الموقع. 
 
@@ -595,10 +588,7 @@ footer{padding:60px 0 30px;background: var(--bg-card);border-top:1px solid var(-
 </div>
 
 <button type="submit" class="btn-submit-secure" id="submitBtn" disabled>
-    <div class="icon-wrap" id="submitIcon">
-        <i class="fa-solid fa-shield-halved"></i>
-    </div>
-    <span id="submitText">تأكيد وإرسال الطلب عبر الخادم الآمن</span>
+    <span>تأكيد وإرسال الطلب عبر الخادم الآمن</span>
 </button>
 </form>
 </div>
@@ -652,36 +642,40 @@ themeToggleBtn.addEventListener('click', () => {
 // 2. تفعيل التوجيه التلقائي لبوابة فودافون كاش عند اختيار الخدمة
 const serviceSelect = document.getElementById('serviceSelect');
 const vcashGateway = document.getElementById('vcashGateway');
+const vcashInput = document.getElementById('vcash_number');
+
 serviceSelect.addEventListener('change', (e) => {
     if(e.target.value !== "") {
         vcashGateway.style.display = 'block';
+        vcashInput.setAttribute('required', 'required');
     } else {
         vcashGateway.style.display = 'none';
+        vcashInput.removeAttribute('required');
     }
 });
 
-// 3. كود حماية الإيميل وحقنه برمجياً لمنع برامج الكشط والسبام
-// تشفير الإيميل وحقنه بعد تحميل الصفحة بالكامل
+// 3. تأكيد وتثبيت إيميل الـ Gmail الأصلي مشفراً لحمايته من الاسبام والزواحف الخبيثة
 window.addEventListener('DOMContentLoaded', () => {
-    const user = "admin";
-    const domain = "eg-security.com"; // ضع النطاق الفعلي الخاص بك هنا
+    const user = "eg.security.help";
+    const domain = "gmail.com";
     const emailWrapper = document.getElementById('secure-email-link');
-    emailWrapper.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
+    emailWrapper.innerHTML = `<a href="mailto:${user}@${domain}" style="color:#0055ff; text-decoration:none; font-weight:800;">${user}@${domain}</a>`;
 });
 
-// 4. التحكم في تفعيل زر الإرسال بناءً على التشيك بوكس الخاص بالاتفاقية القانونية
+// 4. التحكم في تفعيل زر الإرسال بناءً على الشروط القانونية
 const legalAgree = document.getElementById('legalAgree');
 const submitBtn = document.getElementById('submitBtn');
 legalAgree.addEventListener('change', (e) => {
     submitBtn.disabled = !e.target.checked;
 });
 
-// 5. حماية إضافية من الـ Spam والتأكد من عدم ملء حقل الـ Honeypot
+// 5. حماية متقدمة ضد البوتات والـ Spam (Honeypot Verification)
 document.getElementById('secureForm').addEventListener('submit', function(e) {
-    const honeyTrap = document.getElementsByName('_honey_trap')[0].value;
+    const honeyTrap = document.getElementById('honey_trap').value;
     if(honeyTrap !== "") {
-        e.preventDefault(); // منع الإرسال فوراً لأن الفاعل بوت
-        alert('Bot detected!');
+        e.preventDefault();
+        console.warn('Bot submission blocked.');
+        alert('حدث خطأ غير متوقع، يرجى تحديث الصفحة والمحاولة مجدداً.');
     }
 });
 </script>
