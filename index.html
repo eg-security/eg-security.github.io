@@ -2,51 +2,53 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <!-- إضافة سياسات الأمان لمنع هجمات XSS و Clickjacking -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://fonts.gstatic.com https://challenges.cloudflare.com; script-src 'self' https://challenges.cloudflare.com; style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com;">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EG Security | Secure Professional Portal</title>
-    
-    <!-- تحميل الموارد من مصادر موثوقة فقط -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- دمج Cloudflare Turnstile لمنع البوتات -->
+    <title>EG Security | Secure Portal</title>
+    <!-- استدعاء سكربت Cloudflare Turnstile -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-
     <style>
-        /* [تم الاحتفاظ بتنسيقاتك الاحترافية هنا] */
-        body { font-family: 'Cairo', sans-serif; transition: background 0.3s; }
-        .cf-turnstile { margin: 20px 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+        h2 { text-align: center; color: #333; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; color: #555; }
+        input[type="text"], input[type="email"] { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; border: none; border-radius: 6px; background: #007bff; color: white; font-size: 16px; cursor: pointer; transition: 0.3s; }
+        button:disabled { background: #cccccc; cursor: not-allowed; }
+        .cf-turnstile { margin-bottom: 20px; display: flex; justify-content: center; }
     </style>
 </head>
 <body>
 
-<!-- محتوى الصفحة -->
-<form id="secureForm" action="https://formspree.io/f/mkoezyzk" method="POST">
-    <!-- حماية إضافية عبر التوكين -->
-    <input type="hidden" name="_gotcha" style="display:none">
-    
-    <div class="contact-form-wrapper">
-        <!-- حقولك هنا... -->
+<div class="container">
+    <h2>نموذج التواصل الآمن</h2>
+    <form id="secureForm" action="https://formspree.io/f/mkoezyzk" method="POST">
         
-        <!-- إضافة أداة Cloudflare Turnstile للتحقق من البشر -->
-        <div class="cf-turnstile" data-sitekey="YOUR_SITE_KEY_HERE"></div>
+        <div class="form-group">
+            <label>الاسم الكامل:</label>
+            <input type="text" name="name" required>
+        </div>
 
-        <button type="submit" class="btn-submit-secure" id="submitBtn" disabled>
-            تأكيد وإرسال الطلب عبر الخادم الآمن
-        </button>
-    </div>
-</form>
+        <div class="form-group">
+            <label>البريد الإلكتروني:</label>
+            <input type="email" name="email" required>
+        </div>
+
+        <!-- أداة الحماية Turnstile -->
+        <div class="cf-turnstile" 
+             data-sitekey="0x4AAAAAADVSGnUiBiBRD5OW" 
+             data-callback="enableSubmitButton">
+        </div>
+
+        <button type="submit" id="submitBtn" disabled>إرسال الطلب</button>
+    </form>
+</div>
 
 <script>
-    // تفعيل الزر فقط بعد موافقة العميل
-    const agree = document.getElementById('legalAgree');
-    const btn = document.getElementById('submitBtn');
-    if(agree) agree.addEventListener('change', () => btn.disabled = !agree.checked);
-
-    // حماية إضافية لمنع التلاعب في النموذج عبر الـ Console
-    Object.freeze(document.getElementById('secureForm'));
+    // دالة تفعيل زر الإرسال عند نجاح التحقق
+    function enableSubmitButton() {
+        document.getElementById('submitBtn').disabled = false;
+    }
 </script>
 
 </body>
