@@ -353,7 +353,7 @@ footer{padding:60px 0 30px;background: var(--bg-card);border-top:1px solid var(-
 <ul class="exp-list">
 <li><i class="fa-solid fa-circle-chevron-left"></i> Meta Portal Support (Facebook & Instagram)</li>
 <li><i class="fa-solid fa-circle-chevron-left"></i> X / Twitter Enterprise Resolution</li>
-<li><i class="fa-solidxl fa-circle-chevron-left"></i> حل مشكلات التحقق الثنائي 2FA</li>
+<li><i class="fa-solid fa-circle-chevron-left"></i> حل مشكلات التحقق الثنائي 2FA</li>
 </ul>
 </div>
 </div>
@@ -519,7 +519,6 @@ footer{padding:60px 0 30px;background: var(--bg-card);border-top:1px solid var(-
     </div>
     <div class="contact-card-details">
         <strong>البريد الإلكتروني الرسمي للإدارة والنزاعات</strong>
-        <!-- تم حماية الإيميل برمجياً هنا بالاستدعاء الذكي لمنع زواحف السبام -->
         <span id="secure-email-link">جاري تحميل بريد الإدارة الآمن...</span>
         <span>مخصص للمراسلات الرسمية والشركات ومتابعة حالات التشفير المعقدة.</span>
     </div>
@@ -533,7 +532,6 @@ footer{padding:60px 0 30px;background: var(--bg-card);border-top:1px solid var(-
 <div class="contact-form-wrapper">
 <h3>نموذج الطلب وتأكيد رسوم الفحص</h3>
 <form id="secureForm" action="https://formspree.io/f/mkoezyzk" method="POST">
-<!-- حقل Honeypot أمني فخ للبوتات: البوت هيملأ الحقل ده تلقائي فالسيرفر يحظره، بينما الإنسان مش هيشوفه أصلاً -->
 <div class="secure-gate-field">
     <label>Don't fill this if you are human:</label>
     <input type="text" name="_honey_trap">
@@ -613,133 +611,79 @@ footer{padding:60px 0 30px;background: var(--bg-card);border-top:1px solid var(-
 <div class="footer-content">
 <div class="footer-brand">
 <h3>EG Security</h3>
-<p>منظومة حماية متقدمة تعمل على مدار الساعة لتقديم خدمات الهندسة العكسية وفحص الأجهزة لتوفير أقصى درجات الطمأنينة وحماية هويات مستخدمينا حول العالم.</p>
+<p>منصتكم الآمنة لحماية الهوية واستعادة الأصول الرقمية بأعلى معايير التشفير الأمنية.</p>
 </div>
 <div class="footer-col">
 <h4>روابط سريعة</h4>
 <ul>
 <li><a href="#home">الرئيسية</a></li>
-<li><a href="#expertise">مجالات الخبرة</a></li>
-<li><a href="#services">الخدمات المدعومة</a></li>
-<li><a href="#pricing">الباقات والرسوم</a></li>
+<li><a href="#expertise">الخبرات</a></li>
+<li><a href="#services">الخدمات</a></li>
 </ul>
 </div>
 <div class="footer-col">
-<h4>الدعم القانوني</h4>
+<h4>الدعم الفني</h4>
 <ul>
-<li><a href="#contact">تأكيد المعاملات</a></li>
-<li><a href="#contact">سياسة التشفير وإتلاف البيانات</a></li>
-<li><a href="#contact">إخلاء المسؤولية</a></li>
+<li><a href="#contact">تواصل معنا</a></li>
+<li><a href="#pricing">الأسعار</a></li>
 </ul>
 </div>
 </div>
 <div class="footer-bottom">
-&copy; 2026 EG Security. جميع الحقوق محفوظة | مشفر بروتوكولياً بنظام التدمير التلقائي للبيانات.
+&copy; 2026 EG Security. جميع الحقوق محفوظة.
 </div>
 </div>
 </footer>
 
 <script>
-// 1. ميزة تبديل المظهر (الفاتح / المظلم) مع حفظ الاختيار في المتصفح
+// 1. نظام تبديل المظهر (Dark / Light Theme)
 const themeToggleBtn = document.getElementById('themeToggleBtn');
-const currentTheme = localStorage.getItem('theme') || 'light';
-
-if (currentTheme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-}
-
 themeToggleBtn.addEventListener('click', () => {
-    let theme = document.documentElement.getAttribute('data-theme');
-    if (theme === 'dark') {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
+    const currentTheme = document.body.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+        document.body.removeAttribute('data-theme');
         themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
     } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
+        document.body.setAttribute('data-theme', 'dark');
         themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
     }
 });
 
-// 2. إظهار وإخفاء بوابة فودافون كاش ديناميكياً بناءً على اختيار العميل
+// 2. تفعيل التوجيه التلقائي لبوابة فودافون كاش عند اختيار الخدمة
 const serviceSelect = document.getElementById('serviceSelect');
 const vcashGateway = document.getElementById('vcashGateway');
-
-serviceSelect.addEventListener('change', function() {
-    if (this.value !== "") {
+serviceSelect.addEventListener('change', (e) => {
+    if(e.target.value !== "") {
         vcashGateway.style.display = 'block';
     } else {
         vcashGateway.style.display = 'none';
     }
 });
 
-// 3. تفعيل زر الإرسال فقط عند موافقة العميل على شروط الاتفاقية القانونية
+// 3. كود حماية الإيميل وحقنه برمجياً لمنع برامج الكشط والسبام
+// تشفير الإيميل وحقنه بعد تحميل الصفحة بالكامل
+window.addEventListener('DOMContentLoaded', () => {
+    const user = "admin";
+    const domain = "eg-security.com"; // ضع النطاق الفعلي الخاص بك هنا
+    const emailWrapper = document.getElementById('secure-email-link');
+    emailWrapper.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
+});
+
+// 4. التحكم في تفعيل زر الإرسال بناءً على التشيك بوكس الخاص بالاتفاقية القانونية
 const legalAgree = document.getElementById('legalAgree');
 const submitBtn = document.getElementById('submitBtn');
-
-legalAgree.addEventListener('change', function() {
-    submitBtn.disabled = !this.checked;
+legalAgree.addEventListener('change', (e) => {
+    submitBtn.disabled = !e.target.checked;
 });
 
-// 🔒 [تحديث أمني] 4. تكتيك تشفير الإيميل لمنع البوتات وزواحف الويب من سرقته وقراءته
-window.addEventListener('DOMContentLoaded', () => {
-    const user = "mostafa.mahmoud.egp";
-    const domain = "gmail.com";
-    const secureContainer = document.getElementById('secure-email-link');
-    if(secureContainer) {
-        secureContainer.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
+// 5. حماية إضافية من الـ Spam والتأكد من عدم ملء حقل الـ Honeypot
+document.getElementById('secureForm').addEventListener('submit', function(e) {
+    const honeyTrap = document.getElementsByName('_honey_trap')[0].value;
+    if(honeyTrap !== "") {
+        e.preventDefault(); // منع الإرسال فوراً لأن الفاعل بوت
+        alert('Bot detected!');
     }
-});
-
-// 5. معالجة الإرسال عبر الـ AJAX والـ Fetch API وحماية المخرجات ضد الـ XSS والتخريب
-const secureForm = document.getElementById('secureForm');
-const submitText = document.getElementById('submitText');
-const submitIcon = document.getElementById('submitIcon');
-
-secureForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // 🔒 [تحديث أمني] كشف مصيدة البوتات (Honeypot Verification)
-    const honeyTrap = secureForm.querySelector('input[name="_honey_trap"]').value;
-    if (honeyTrap.length > 0) {
-        console.warn("Spam Bot Detected!");
-        return; // يتم إنهاء العملية فوراً ودون إشعار البوت
-    }
-    
-    submitBtn.disabled = true;
-    submitText.innerText = 'جاري التشفير والإرسال الفوري...';
-    submitIcon.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
-    
-    const formData = new FormData(secureForm);
-    
-    fetch(secureForm.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            submitText.innerText = 'تم استلام طلبك وبدء الفحص الفوري!';
-            submitIcon.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #25d366"></i>';
-            submitBtn.style.background = 'linear-gradient(135deg, #25d366, #1ebd59)';
-            alert('تم إرسال طلبك بنجاح وسيتصل بك الدعم الفني عبر الواتساب أو البريد الإلكتروني خلال دقائق معدودة.');
-            secureForm.reset();
-            vcashGateway.style.display = 'none';
-        } else {
-            throw new Error('Network error');
-        }
-    })
-    .catch(error => {
-        alert('عذراً، حدث خطأ أثناء الاتصال بالخادم الآمن. يرجى مراجعة اتصال الإنترنت الخاص بك أو المحاولة مرة أخرى.');
-        submitBtn.disabled = false;
-        submitText.innerText = 'تأكيد وإرسال الطلب عبر الخادم الآمن';
-        submitIcon.innerHTML = '<i class="fa-solid fa-shield-halved"></i>';
-    });
 });
 </script>
-
 </body>
 </html>
