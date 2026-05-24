@@ -1,45 +1,683 @@
-<!-- التكملة المتممة للكود الخاص بك -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="description" content="EG Security - Professional Account Recovery & Cybersecurity Services">
+<title>EG Security | Global Account Recovery & Cybersecurity</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght=400;600;700;900&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Cairo',sans-serif;direction:rtl;line-height:1.6;transition: background 0.4s ease, color 0.4s ease;text-size-adjust:100%;-webkit-text-size-adjust:100%}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+
+:root {
+    --bg-body: #f7f9fc;
+    --bg-card: #ffffff;
+    --text-main: #2d3748;
+    --text-muted: #718096;
+    --text-nav: #4a5568;
+    --border-color: rgba(0,85,255,0.06);
+    --nav-bg: rgba(255,255,255,0.9);
+    --hero-gradient: radial-gradient(circle at 50% 50%, #ffffff 0%, #f0f4f8 100%);
+    --input-bg: #ffffff;
+    --legal-bg: #f8fafc;
+    --title-gradient: linear-gradient(135deg,#1a202c 30%,#0055ff 70%,#00a3ff 100%);
+}
+
+[data-theme="dark"] {
+    --bg-body: #0b0f19;
+    --bg-card: #121826;
+    --text-main: #f7fafc;
+    --text-muted: #a0aec0;
+    --text-nav: #e2e8f0;
+    --border-color: rgba(255,255,255,0.06);
+    --nav-bg: rgba(11,15,25,0.9);
+    --hero-gradient: radial-gradient(circle at 50% 50%, #121826 0%, #0b0f19 100%);
+    --input-bg: #1a202c;
+    --legal-bg: #161d2f;
+    --title-gradient: linear-gradient(135deg,#ffffff 30%,#0077ff 70%,#00d4ff 100%);
+}
+
+body { background-color: var(--bg-body); color: var(--text-main); padding-top: 80px; }
+
+nav{position:fixed;top:0;left:0;width:100%;background: var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid rgba(0,85,255,0.08);padding:15px 0;box-shadow:0 4px 20px rgba(0,0,0,0.02);transition: background 0.4s ease;}
+.nav-content{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.5rem;font-weight:900;color:#0055ff;display:flex;align-items:center;gap:10px;letter-spacing:0.5px}
+
+.bt5-logo{width:38px;height:38px;background:linear-gradient(135deg,#1a202c,#2d3748);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#00d4ff;font-size:1.2rem;box-shadow:0 6px 15px rgba(0,85,255,0.15);border:1px solid #4a5568}
+
+.nav-links{display:flex;gap:20px;list-style:none}
+.nav-links a{color: var(--text-nav);text-decoration:none;font-weight:700;transition:all 0.3s;font-size:0.9rem}
+.nav-links a:hover{color:#0055ff}
+
+.hero{min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 0;background: var(--hero-gradient);position:relative;overflow:hidden;transition: background 0.4s ease;}
+.hero-content{position:relative;z-index:2;max-width:900px}
+
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg, rgba(0,85,255,0.06), rgba(37,211,102,0.06));border:1px solid rgba(0,85,255,0.25);color:#0055ff;padding:12px 24px;border-radius:50px;font-size:0.9rem;margin-bottom:25px;font-weight:800;box-shadow:0 8px 20px rgba(0,85,255,0.04);line-height:1.5}
+.hero-badge i{color:#25d366;font-size:1rem}
+
+.hero h1{font-size:3.5rem;font-weight:900;margin-bottom:15px;background: var(--title-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing: -0.5px}
+.hero-subtitle{font-size:1.3rem;color: var(--text-main);margin-bottom:20px;font-weight:700;padding:0 10px}
+.hero-desc{font-size:1.05rem;color: var(--text-muted);max-width:750px;margin:0 auto 30px;line-height:1.7;padding:0 10px}
+
+.hero-stats{display:flex;justify-content:center;gap:20px;margin:35px 0;flex-wrap:wrap;padding:0 10px}
+.stat{text-align:center;background: var(--bg-card);padding:15px 25px;border-radius:16px;border:1px solid var(--border-color);box-shadow:0 10px 30px rgba(0,0,0,0.02);flex: 1 1 calc(50% - 20px);max-width: 220px;}
+.stat-number{font-size:2.2rem;font-weight:900;color:#0055ff}
+.stat-label{color: var(--text-muted);font-size:0.85rem;margin-top:5px;font-weight:600}
+
+.btn{display:inline-block;padding:14px 35px;background:linear-gradient(135deg,#0055ff,#0033cc);color:#fff;text-decoration:none;border-radius:50px;font-weight:700;font-size:0.95rem;margin:8px;transition:all 0.3s ease;border:none;cursor:pointer;box-shadow:0 8px 25px rgba(0,85,255,0.2);max-width: 100%;text-align: center;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(0,85,255,0.35)}
+.btn-outline{background:transparent;border:2px solid #0055ff;color:#0055ff;box-shadow:none}
+.btn-outline:hover{background:linear-gradient(135deg,#0055ff,#0033cc);color:#fff}
+.btn-whatsapp{background:linear-gradient(135deg,#25d366,#1ebd59);box-shadow:0 8px 25px rgba(37,211,102,0.2)}
+
+.theme-switch-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, #0055ff, #00a3ff);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 85, 255, 0.3);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+.theme-switch-btn:hover { transform: scale(1.05); }
+
+.trust{padding:35px 0;text-align:center;background: var(--bg-card);border-top:1px solid var(--border-color);border-bottom:1px solid var(--border-color);transition: background 0.4s ease;}
+.trust h3{color: var(--text-muted);font-size:0.9rem;margin-bottom:20px;font-weight:700}
+.trust-items{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;padding:0 10px}
+.trust-item{color: var(--text-main);font-size:0.85rem;display:flex;align-items:center;gap:6px;font-weight:700}
+.trust-item i{color:#25d366}
+
+.section{padding:80px 0;position:relative}
+.section-header{text-align:center;margin-bottom:45px;padding:0 15px}
+.section-header h2{font-size:2.1rem;font-weight:900;color: var(--text-main);margin-bottom:12px}
+.section-header p{color: var(--text-muted);max-width:600px;margin:0 auto;font-size:1rem;font-weight:600}
+.section-line{width:45px;height:4px;background:linear-gradient(90deg,#0055ff,#00a3ff);margin:15px auto;border-radius:10px}
+
+.expertise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:25px}
+.exp-card{background: var(--bg-card);border:1px solid var(--border-color);border-radius:20px;padding:30px;transition:all 0.3s ease;box-shadow:0 10px 35px rgba(0,0,0,0.01)}
+.exp-card:hover{transform:translateY(-5px);border-color:rgba(0,85,255,0.15)}
+.exp-icon{font-size:2.2rem;color:#0055ff;margin-bottom:15px;display:inline-block}
+.exp-card h3{font-size:1.25rem;color: var(--text-main);margin-bottom:12px;font-weight:700}
+.exp-card p{color: var(--text-muted);line-height:1.7;font-size:0.9rem}
+.exp-list{margin-top:15px;list-style:none}
+.exp-list li{padding:6px 0;color: var(--text-main);display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:600}
+.exp-list li i{color:#0055ff;font-size:0.75rem}
+
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.service-card{background: var(--bg-card);border:1px solid var(--border-color);border-radius:16px;padding:30px 25px;transition:all 0.3s ease;display:flex;flex-direction:column;box-shadow:0 8px 25px rgba(0,0,0,0.01)}
+.service-card:hover{transform:translateY(-4px);border-color:rgba(0,85,255,0.15)}
+.service-icon{font-size:2.2rem;color:#0055ff;margin-bottom:12px;display:flex;align-items:center;justify-content:center;height:50px}
+.twitter-icon-group { display: flex; align-items: center; gap: 12px; font-size: 2.2rem; color: #0055ff; }
+.twitter-icon-group .separator { font-size: 1.4rem; color: var(--text-muted); opacity: 0.5; font-weight: 300; }
+
+.service-card h3{color: var(--text-main);margin-bottom:10px;font-size:1.15rem;font-weight:700}
+.service-card p{color: var(--text-muted);font-size:0.85rem;line-height:1.6;flex-grow:1}
+.service-price{color:#0055ff;font-size:1.2rem;font-weight:900;margin-top:15px;border-top:1px solid var(--border-color);padding-top:12px;display:flex;align-items:baseline;gap:4px}
+.service-price span{color: var(--text-muted);font-size:0.8rem;font-weight:600}
+
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:25px;max-width:1000px;margin:0 auto}
+.price-card{background: var(--bg-card);border:1px solid var(--border-color);border-radius:20px;padding:35px 25px;text-align:center;transition:all 0.3s ease;box-shadow:0 10px 35px rgba(0,0,0,0.01)}
+.price-card.popular{border:2px solid #0055ff;position:relative}
+.popular-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#0055ff,#00a3ff);color:#fff;padding:4px 20px;border-radius:20px;font-size:0.75rem;font-weight:700}
+.price-card h3{color: var(--text-main);font-size:1.25rem;margin-bottom:8px;font-weight:700}
+.price-card .price{font-size:2.5rem;font-weight:900;color: var(--text-main);margin:15px 0;display:flex;justify-content:center;align-items:baseline;gap:4px}
+.price-card .price span{font-size:0.9rem;color: var(--text-muted);font-weight:600}
+.price-features{list-style:none;margin:25px 0;text-align:right}
+.price-features li{padding:10px 0;color: var(--text-main);border-bottom:1px solid var(--border-color);font-size:0.85rem;display:flex;align-items:center;font-weight:600}
+.price-features li i{color:#25d366;margin-left:10px}
+
+.process-steps{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;max-width:1000px;margin:0 auto}
+.step grid{text-align:center;max-width:220px;flex:1 1 180px;padding:10px}
+.step-num{width:55px;height:55px;background:linear-gradient(135deg,#0055ff,#0033cc);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:900;margin:0 auto 15px;box-shadow:0 6px 15px rgba(0,85,255,0.2)}
+.step h4{color: var(--text-main);margin-bottom:10px;font-size:1.1rem;font-weight:700}
+.step p{color: var(--text-muted);font-size:0.85rem;line-height:1.5}
+
+.legal-box{background: var(--legal-bg);border:1px solid var(--border-color);border-radius:16px;padding:30px;margin-top:45px;box-shadow:0 4px 15px rgba(0,0,0,0.01)}
+.legal-box h3{color:#e53e3e;font-size:1.2rem;margin-bottom:12px;display:flex;align-items:center;gap:8px;font-weight:900}
+.legal-text{font-size:0.85rem;color: var(--text-main);text-align:justify;line-height:1.7;height:140px;overflow-y:scroll;padding:12px;background: var(--bg-card);border:1px solid var(--border-color);border-radius:10px;margin-bottom:15px}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:start}
+
+.contact-info h3, .contact-form-wrapper h3{color: var(--text-main);margin-bottom:25px;font-size:1.4rem;font-weight:700;position:relative;padding-bottom:10px}
+.contact-info h3::after, .contact-form-wrapper h3::after{content:'';position:absolute;bottom:0;right:0;width:35px;height:3px;background:#0055ff;border-radius:5px}
+
+.contact-card-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.01);
+    transition: all 0.3s ease;
+}
+.contact-card-item:hover {
+    transform: translateX(-3px);
+    border-color: rgba(0, 85, 255, 0.2);
+}
+.contact-card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+.icon-whatsapp-bg { background: rgba(37,211,102,0.08); color: #25d366; border: 1px solid rgba(37,211,102,0.15); }
+.icon-email-bg { background: rgba(0,85,255,0.08); color: #0055ff; border: 1px solid rgba(0,85,255,0.15); }
+
+.contact-card-details strong { color: var(--text-main); display: block; font-size: 0.95rem; margin-bottom: 4px; font-weight: 700; }
+.contact-card-details a { color: #0055ff; text-decoration: none; font-weight: 800; font-size: 1rem; word-break: break-all; }
+.contact-card-details span { color: var(--text-muted); font-size: 0.85rem; font-weight: 600; display: block; line-height: 1.4; }
+
+input, select, textarea{width:100%;padding:12px;background: var(--input-bg);border:1px solid var(--border-color);border-radius:10px;color: var(--text-main);font-family:inherit;transition:all 0.3s ease;font-size:0.9rem;font-weight:600}
+input:focus, select:focus, textarea:focus{outline:none;border-color:#0055ff;box-shadow:0 0 12px rgba(0,85,255,0.12)}
+label{display:block;color: var(--text-main);margin-bottom:6px;font-size:0.85rem;font-weight:700}
+
+.v-cash-gate{background: rgba(229,62,62,0.04);border:1px dashed #e53e3e;border-radius:12px;padding:15px;margin-top:15px;display:none}
+.v-cash-title{color:#e53e3e;font-weight:900;display:flex;align-items:center;gap:6px;margin-bottom:8px;font-size:0.95rem}
+.v-cash-num-box{background: var(--bg-card);border:1px solid #feb2b2;padding:10px;border-radius:8px;text-align:center;font-size:1.2rem;font-weight:900;color:#c53030;margin:8px 0;letter-spacing:1px}
+
+/* حماية حقل فخ الروبوتات (Honeypot Anti-Spam Field) */
+.secure-gate-field { display: none !important; visibility: hidden !important; }
+
+.btn-submit-secure {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 1rem;
+    padding: 15px;
+    background: linear-gradient(135deg, #0055ff, #002299);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 6px 20px rgba(0, 85, 255, 0.2);
+    transition: all 0.3s ease;
+}
+.btn-submit-secure:hover {
+    background: linear-gradient(135deg, #0066ff, #0033cc);
+}
+.btn-submit-secure:disabled {
+    background: #cbd5e0;
+    color: #718096;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+footer{padding:60px 0 30px;background: var(--bg-card);border-top:1px solid var(--border-color);transition: background 0.4s ease;}
+.footer-content{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;margin-bottom:40px}
+.footer-brand h3{color:#0055ff;font-size:1.4rem;margin-bottom:15px;font-weight:900}
+.footer-brand p{color: var(--text-muted);font-size:0.85rem;line-height:1.7;font-weight:600}
+.footer-col h4{color: var(--text-main);margin-bottom:15px;font-size:0.95rem;font-weight:700}
+.footer-col ul{list-style:none}
+.footer-col ul li{padding:8px 0}
+.footer-col ul li a{color: var(--text-muted);text-decoration:none;font-size:0.85rem;transition:all 0.3s;font-weight:600}
+.footer-col ul li a:hover{color:#0055ff}
+.footer-bottom{text-align:center;padding-top:30px;border-top:1px solid var(--border-color);color: var(--text-muted);font-size:0.8rem;font-weight:700}
+
+@media(max-width:992px){
+    .contact-grid{grid-template-columns:1fr}
+    .footer-content{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+    body{padding-top: 70px;}
+    nav{padding:12px 0}
+    .nav-links{display:none}
+    .hero h1{font-size:2.4rem}
+    .hero-subtitle{font-size:1.1rem}
+    .hero-desc{font-size:0.95rem}
+    .stat{flex: 1 1 100%; max-width: 100%;}
+    .footer-content{grid-template-columns:1fr; gap:25px}
+    .section-header h2{font-size:1.7rem}
+    .btn{width:100%; margin:8px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="theme-switch-btn" id="themeToggleBtn" title="تبديل المظهر الآمن">
+    <i class="fa-solid fa-moon"></i>
+</div>
+
+<nav>
+<div class="container nav-content">
+<div class="logo"><div class="bt5-logo"><i class="fa-solid fa-dragon"></i></div>EG Security</div>
+<ul class="nav-links">
+<li><a href="#home">الرئيسية</a></li>
+<li><a href="#expertise">الخبرات</a></li>
+<li><a href="#services">الخدمات</a></li>
+<li><a href="#pricing">باقاتنا</a></li>
+<li><a href="#contact">تواصل معنا</a></li>
+</ul>
+</div>
+</nav>
+
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content">
+<div class="hero-badge">
+    <i class="fa-solid fa-shield-cat"></i> 
+    <span>خصوصيتك خط أحمر، بياناتك مشفرة بالكامل، ونضمن لك استعادة أصولك الرقمية بكل طمأنينة وراحة بال.</span>
+</div>
+<h1>EG Security</h1>
+<div class="hero-subtitle">المنظومة العالمية الأكثر موثوقية في حماية الهوية واستعادة الأصول الرقمية</div>
+<p class="hero-desc">نحن ندمج تقنيات فحص الأنظمة المتقدمة وهندسة الخوادم العكسية لإعادة صلاحيات الوصول والتحكم الكامل بحساباتك ومنصاتك عبر قنوات فنية متطورة.</p>
+<div class="hero-stats">
+<div class="stat"><div class="stat-number">1,200+</div><div class="stat-label">حساب مستعاد عالمياً</div></div>
+<div class="stat"><div class="stat-number">99.2%</div><div class="stat-label">معدل استجابة ونجاح</div></div>
+<div class="stat"><div class="stat-number">24/7</div><div class="stat-label">حماية سيبرانية مستمرة</div></div>
+<div class="stat"><div class="stat-number">65+</div><div class="stat-label">دولة حول العالم</div></div>
+</div>
+<div>
+<a href="https://wa.me/201030731993" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> المحادثة الفورية (واتساب)</a>
+<a href="#pricing" class="btn btn-outline">استعراض الخدمات والأسعار</a>
+</div>
+</div>
+</div>
+</section>
+
+<div class="trust">
+<div class="container">
+<h3>بروتوكولات حماية تشفير مشددة لحماية سرية بيانات وأجهزة عملائنا</h3>
+<div class="trust-items">
+<div class="trust-item"><i class="fa-solid fa-user-secret"></i> أنظمة فحص خالية من التتبع</div>
+<div class="trust-item"><i class="fa-solid fa-trash-arrow-up"></i> إتلاف البيانات التلقائي فور التسليم</div>
+<div class="trust-item"><i class="fa-solid fa-vault"></i> ربط وتأمين خوادم دفع فوري آمنة</div>
+<div class="trust-item"><i class="fa-solid fa-paper-plane"></i> تواصل بروتوكولي مباشر مع الإدارات</div>
+</div>
+</div>
+</div>
+
+<section class="section" id="expertise">
+<div class="container">
+<div class="section-header">
+<h2>منظومة خبراتنا وفحص الأنظمة المتكاملة</h2>
+<div class="section-line"></div>
+<p>نعتمد على بيئات أمنية متقدمة لتتبع وحل أعقد الاختراقات الرقمية بذكاء كامل.</p>
+</div>
+<div class="expertise-grid">
+<div class="exp-card">
+<div class="exp-icon"><i class="fa-solid fa-terminal"></i></div>
+<h3>الأمن السيبراني المتقدم</h3>
+<p>تحليل كامل للتهديدات الرقمية واختراق الأنظمة للشركات والأفراد وسد الثغرات قبل استغلالها.</p>
+<ul class="exp-list">
+<li><i class="fa-solid fa-circle-chevron-left"></i> تقييم الثغرات الأمنية المتقدمة</li>
+<li><i class="fa-solid fa-circle-chevron-left"></i> اختبار الاختراق والتحليل الأمني للهجمات</li>
+<li><i class="fa-solid fa-circle-chevron-left"></i> تأمين السيرفرات السحابية وقواعد البيانات</li>
+</ul>
+</div>
+<div class="exp-card">
+<div class="exp-icon"><i class="fa-solid fa-gamepad"></i></div>
+<h3>منصات الألعاب والترفيه الرقمي</h3>
+<p>استرجاع متقدم لحسابات الألعاب العالمية ذات القيمة العالية وحل النزاعات البرمجية المتعلقة بالملكية.</p>
+<ul class="exp-list">
+<li><i class="fa-solid fa-circle-chevron-left"></i> PUBG Mobile - دعم خوادم Krafton</li>
+<li><i class="fa-solid fa-circle-chevron-left"></i> Free Fire & Garena Premium support</li>
+<li><i class="fa-solid fa-circle-chevron-left"></i> Activision & Epic Games support</li>
+</ul>
+</div>
+<div class="exp-card">
+<div class="exp-icon"><i class="fa-solid fa-user-shield"></i></div>
+<h3>إدارة الهوية الرقمية (Social Media)</h3>
+<p>فك الحظر واستعادة الهويات والمواقع الرقمية الرسمية للأفراد والمشاهير والشركات عبر بروتوكولات مخصصة.</p>
+<ul class="exp-list">
+<li><i class="fa-solid fa-circle-chevron-left"></i> Meta Portal Support (Facebook & Instagram)</li>
+<li><i class="fa-solid fa-circle-chevron-left"></i> X / Twitter Enterprise Resolution</li>
+<li><i class="fa-solid fa-circle-chevron-left"></i> حل مشكلات التحقق الثنائي 2FA</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="services" style="background: rgba(0,85,255,0.02)">
+<div class="container">
+<div class="section-header">
+<h2>خدماتنا والمنصات المدعومة</h2>
+<div class="section-line"></div>
+<p>حلول متكاملة لاسترجاع وتأمين الأصول الرقمية الشخصية والتجارية عبر آليات متوافقة بالكامل.</p>
+</div>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon"><i class="fa-brands fa-playstation"></i></div>
+<h3>استعادة وتأمين حسابات PUBG</h3>
+<p>استرداد كامل للمشتريات والبيانات والربط الداخلي عبر خوادم Krafton الرسمية لحسابك.</p>
+<div class="service-price">يحدد بعد الفحص <span>حسب المشكلة</span></div>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fa-brands fa-google"></i></div>
+<h3>استعادة حسابات Google & Gmail</h3>
+<p>تخطي مشاكل التحقق المفقود والمصادقة الثنائية وتأمين البريد ضد محاولات الهندسة الاجتماعية.</p>
+<div class="service-price">يحدد بعد الفحص <span>حسب المشكلة</span></div>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fa-brands fa-meta"></i></div>
+<h3>منصات Meta (فيسبوك وإنستجرام)</h3>
+<p>استرجاع الحسابات المخترقة، المعطلة احترازياً، أو الواقعة تحت هجمات الـ Phishing.</p>
+<div class="service-price">يحدد بعد الفحص <span>حسب المشكلة</span></div>
+</div>
+<div class="service-card">
+<div class="service-icon">
+    <div class="twitter-icon-group">
+        <i class="fa-brands fa-twitter" style="color:#1da1f2;"></i>
+        <span class="separator">/</span>
+        <i class="fa-brands fa-x-twitter"></i>
+    </div>
+</div>
+<h3>استعادة حسابات تويتر / X</h3>
+<p>تأمين الحسابات الشخصية والتجارية العالية، وتخطي التعليق الأمني المفاجئ، وإبطال نفوذ المخترق تماماً.</p>
+<div class="service-price">يحدد بعد الفحص <span>حسب المشكلة</span></div>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fa-brands fa-tiktok"></i></div>
+<h3>استعادة وتأمين TikTok</h3>
+<p>استرجاع قنوات صناع المحتوى وحماية المتابعين من السرقة وإعادة تفعيل ميزات البث.</p>
+<div class="service-price">يحدد بعد الفحص <span>حسب المشكلة</span></div>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fa-solid fa-key"></i></div>
+<h3>جدار الحماية الفردي الشامل</h3>
+<p>بناء منظومة أمان خاصة بجهازك وحساباتك تشمل تفعيل بروتوكولات حماية متطورة.</p>
+<div class="service-price">حسب حجم الأنظمة <span>والتأمين</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="pricing">
+<div class="container">
+<div class="section-header">
+<h2>باقات الدعم والحلول المتكاملة</h2>
+<div class="section-line"></div>
+<p>باقات شفافة صُممت لتغطية كافة الاحتياجات من الاستشارات البسيطة وحتى الأنظمة المؤسسية الضخمة.</p>
+</div>
+<div class="pricing-grid">
+<div class="price-card">
+<h3>جلسة تحليل وتقييم أولي</h3>
+<div class="price">100$ <span>USD</span></div>
+<ul class="price-features">
+<li><i class="fa-solid fa-check"></i> فحص فني شامل للحالة والبروتوكولات</li>
+<li><i class="fa-solid fa-check"></i> تحديد ثغرة الاختراق ونوع الهجوم بدقة</li>
+<li><i class="fa-solid fa-check"></i> خطة عمل وتأمين أولية لحماية باقي الأصول</li>
+</ul>
+<a href="#contact" class="btn btn-outline" style="width:100%;margin:15px 0 0">ابدأ الجلسة الآن</a>
+</div>
+<div class="price-card popular">
+<div class="popular-badge">الأكثر كفاءة وطلباً</div>
+<h3>الاستعادة الشاملة للحسابات</h3>
+<div class="price"><span style="font-size:1rem;color: var(--text-muted);margin-left:5px;font-weight:bold">تبدأ من</span> 500$ <span>USD</span></div>
+<p style="color:#e53e3e;font-size:0.8rem;margin-top:-10px;margin-bottom:15px;font-weight:700">* يتم تحديد التكلفة النهائية بدقة حسب التعقيد بعد الفحص</p>
+<ul class="price-features">
+<li><i class="fa-solid fa-check"></i> استرداد كامل وشامل لكافة بيانات الحساب</li>
+<li><i class="fa-solid fa-check"></i> متابعة برمجية حية ومباشرة خطوة بخطوة</li>
+<li><i class="fa-solid fa-check"></i> ضمان حماية فني ومراقبة لمدة 30 يوماً</li>
+</ul>
+<a href="#contact" class="btn" style="width:100%;margin:15px 0 0">اطلب الباقة الآن</a>
+</div>
+<div class="price-card">
+<h3>باقة الشركات وحماية الأعمال</h3>
+<div class="price"><span style="font-size:1rem;color: var(--text-muted);margin-left:5px;font-weight:bold">تبدأ من</span> 1000$ <span>USD</span></div>
+<p style="color:#e53e3e;font-size:0.8rem;margin-top:-10px;margin-bottom:15px;font-weight:700">* السعر النهائي يحدد بدقة وحسب حجم المشكلة والشبكات</p>
+<ul class="price-features">
+<li><i class="fa-solid fa-check"></i> تأمين وحماية متعددة وشاملة للمؤسسات</li>
+<li><i class="fa-solid fa-check"></i> اختبار اختراق شامل للبنية التحتية والشبكات</li>
+<li><i class="fa-solid fa-check"></i> دعم مخصص عالي الأولوية على مدار 90 يوماً</li>
+</ul>
+<a href="#contact" class="btn btn-outline" style="width:100%;margin:15px 0 0">طلب تواصل تجاري</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" style="background: rgba(0,85,255,0.02)">
+<div class="container">
+<div class="section-header">
+<h2>بروتوكول خطوات العمل العالمية</h2>
+<div class="section-line"></div>
+<p>آلية عمل احترافية، شفافة، وآمنة تضمن حقوقك بالكامل منذ اللحظة الأولى.</p>
+</div>
+<div class="process-steps">
+<div class="step">
+<div class="step-num">1</div>
+<h4>تلقي وفحص الطلب</h4>
+<p>نقوم بدراسة المشكلة فنياً وتحديد الثغرة المستغلة في النظام.</p>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<h4>إثبات الملكية القانوني</h4>
+<p>التحقق من هويتك كمالك شرعي للحساب حمايةً لخصوصية البيانات.</p>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<h4>تنفيذ الاستعادة والربط</h4>
+<p>سحب الصلاحيات من المخترق تماماً واستعادة الوصول عبر الخوادم الرسمية.</p>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<h4>التسليم والتشفير</h4>
+<p>تسليم الحساب مع تشفير كلمات المرور وتأمين الأجهزة الخاصة بك.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="container">
+<div class="section-header">
+<h2>مركز استقبال الطلبات الفوري المطور</h2>
+<div class="section-line"></div>
+<p>أرسل تفاصيل مشكلتك وسيقوم النظام بتوجيهك الفوري لبدء الفحص وحجز جلستك.</p>
+</div>
+<div class="contact-grid">
+<div class="contact-info">
+<h3>قنوات الاتصال المباشرة ومعلومات الدفع</h3>
+
+<div class="contact-card-item">
+    <div class="contact-card-icon icon-whatsapp-bg">
+        <i class="fa-solid fa-wallet"></i>
+    </div>
+    <div class="contact-card-details">
+        <strong>محفظة فودافون كاش ورقم الفحص الفوري</strong>
+        <a href="https://wa.me/201030731993" target="_blank" rel="noopener">+20 103 073 1993</a>
+        <span>تدعم استقبال المدفوعات والمعاملات الفورية أوتوماتيكياً من كافة المحافظ والبنوك بمجرد إرفاق الرقم.</span>
+    </div>
+</div>
+
+<div class="contact-card-item">
+    <div class="contact-card-icon icon-email-bg">
+        <i class="fa-solid fa-envelope-open-text"></i>
+    </div>
+    <div class="contact-card-details">
+        <strong>البريد الإلكتروني الرسمي للإدارة والنزاعات</strong>
+        <span id="secure-email-link">جاري تحميل البريد الآمن...</span>
+        <span>مخصص للمراسلات الرسمية والشركات ومتابعة حالات التشفير المعقدة.</span>
+    </div>
+</div>
+
+<div style="margin-top:25px;text-align:center">
+<a href="https://wa.me/201030731993" target="_blank" rel="noopener" class="btn btn-whatsapp" style="font-size:1rem;padding:15px;width:100%; margin:0"><i class="fa-brands fa-whatsapp"></i> فتح محادثة واتساب آلية ومباشرة</a>
+</div>
+</div>
+
+<div class="contact-form-wrapper">
+<h3>نموذج الطلب وتأكيد رسوم الفحص</h3>
+<form id="secureForm" action="https://formspree.io/f/mkoezyzk" method="POST">
+<div class="secure-gate-field" aria-hidden="true">
+    <label for="honey_trap">Don't fill this field if you are human:</label>
+    <input type="text" id="honey_trap" name="_honey_trap" autocomplete="off" tabindex="-1">
+</div>
+<input type="hidden" name="subject" value="🚨 طلب فحص سيبراني جديد - منصة EG">
+<div style="margin-bottom:15px">
+<label for="client_name">الاسم بالكامل / الشركة</label>
+<input type="text" id="client_name" name="الاسم الكامل" required placeholder="أدخل اسمك الفعلي">
+</div>
+<div style="margin-bottom:15px">
+<label for="client_email">بريدك الإلكتروني للمتابعة</label>
+<input type="email" id="client_email" name="بريد العميل" required placeholder="name@example.com">
+</div>
+<div style="margin-bottom:15px">
+<label for="serviceSelect">نوع الخدمة أو الباقة المستهدفة</label>
+<select name="نوع الخدمة المطلوبة" id="serviceSelect" required>
+<option value="">-- يرجى اختيار القسم --</option>
+<option value="Initial Analysis (100$)">جلسة فحص واستشارة أولية (100$)</option>
+<option value="PUBG Mobile Recovery">استعادة وتطهير حساب ببجي موبايل (تبدأ من 500$)</option>
+<option value="Google / Gmail Security">استرجاع والوصول لحساب Google / Gmail (تبدأ من 500$)</option>
+<option value="Meta Platform Issue">استعادة وإصلاح حساب (فيسبوك / إنستجرام) (تبدأ من 500$)</option>
+<option value="X - Twitter Account">استرداد حساب تويتر X (تبدأ من 500$)</option>
+<option value="TikTok Channel Recovery">قنوات وحسابات تيك توك (تبدأ من 500$)</option>
+<option value="Enterprise Solution">باقة الشركات وحماية الأعمال (تبدأ من 1000$)</option>
+</select>
+</div>
+
+<div style="margin-bottom:15px">
+<label for="problem_details">شرح وتحليل تفصيلي للمشكلة (متى وكيف حدثت؟)</label>
+<textarea id="problem_details" name="تفاصيل المشكلة بالكامل" required rows="4" placeholder="اكتب تفاصيل الاختراق، والرسائل المزعجة التي تظهر لك لنقوم بالتحليل الفوري..."></textarea>
+</div>
+
+<div class="v-cash-gate" id="vcashGateway">
+<div class="v-cash-title"><i class="fa-solid fa-wallet"></i> بوابة الدفع السريع والآمن المحمية (Vodafone Cash)</div>
+<p style="font-size:0.8rem;margin-bottom:8px;font-weight:600">لتفعيل الطلب وبدء الفحص أوتوماتيكياً، يرجى إرسال قيمة الباقة المقابلة أو رسوم جلسة الفحص إلى رقم محفظتنا المباشر بالأسفل:</p>
+<div class="v-cash-num-box">01030731993</div>
+<div style="margin-top:10px">
+<label for="vcash_number" style="font-size:0.8rem">أدخل الرقم الذي قمت بالتحويل منه لتأكيد العملية والربط التلقائي في الخادم:</label>
+<input type="text" id="vcash_number" name="رقم تحويل فودافون كاش" placeholder="01xxxxxxxxx" pattern="01[0-2,5]\d{8}">
+</div>
+</div>
+
+<div class="legal-box">
+<h3><i class="fa-solid fa-gavel"></i> اتفـاقية إخلاء المسؤولية القـانونية والشروط العامة</h3>
+<div class="legal-text">
+إن موقع منصة EG Security وإدارتها ومطوريها ومهندسيها غير مسؤولين بصفة مطلقة، مباشرة أو غير مباشرة، عن أي استخدام خاطئ، أو ضرر، أو خسارة في البيانات، أو تبعات مدنية أو جنائية تنشأ عن طلب خدمات الأمن السيبراني أو الاسترداد الفني المتاحة عبر هذا الموقع. 
+
+بصفتك مستخدماً أو عميلاً، فإنك تقر وتتعهد وتضمن وتوافق موافقة كاملة ومطلقة وبأثر فوري ولا رجعة فيه على ما يلي:
+1. أنك المالك الشرعي والوحيد والقانوني للحساب، أو البريد الإلكتروني، أو النظام، أو الأصول الرقمية المقترن بها طلب الخدمة.
+2. تتحمل وحدك كامل المسؤولية القانونية والجنائية والمدنية والأخلاقية أمام كافة الجهات الحكومية والقضائية في حال تقديمك لمعلومات مضللة أو وثائق مزيفة.
+3. تسقط وتتنازل بموجب هذه الاتفاقية عن أي حق في ملاحقة، أو مقاضاة إدارة الموقع أو المهندسين القائمين عليه بأي تعويضات مالية أو قانونية تحت أي ظرف من الظروف.
+4. توافق على أن الرسوم المدفوعة مقابل عمليات الفحص الفني وتحليل الأنظمة هي رسوم غير قابلة للاسترداد نظراً لاستهلاك موارد الخوادم والوقت البرمجي المستغرق في التحليل، بغض النظر عن النتيجة التقنية النهائية.
+5. تخلي طرف إدارة الموقع ومطوريه تماماً من أي مسؤولية وتتعهد بعدم استخدام المخرجات أو الاستشارات الأمنية القدمة إليك في أي أنشطة تخريبية أو ضارة بالغير.
+
+استمرارك في استخدام هذا الموقع، أو الضغط على زر الإرسال وتأكيد الطلب، يُعد توقيعاً إلكترونياً رسمياً وموافقة نهائية مطلقة وموثقة من طرفك على كافة البنود والشروط المذكورة أعلاه دون قيد أو شرط أو تحفظ.
+</div>
+<label style="display:flex; align-items:center; gap:8px; font-size:0.85rem; font-weight:bold; cursor:pointer; margin-top:15px;">
+    <input type="checkbox" id="legalAgree" required style="width:auto; cursor:pointer">
+    <span>أوافق وبصمة إلكترونياً على بنود اتفاقية إخلاء المسؤولية بالكامل وأتحمل عواقبها.</span>
+</label>
+</div>
+
+<button type="submit" class="btn-submit-secure" id="submitBtn" disabled>
+    <span>تأكيد وإرسال الطلب عبر الخادم الآمن</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-brand">
+<h3>EG Security</h3>
+<p>منصتكم الآمنة لحماية الهوية واستعادة الأصول الرقمية بأعلى معايير التشفير الأمنية.</p>
+</div>
+<div class="footer-col">
+<h4>روابط سريعة</h4>
+<ul>
+<li><a href="#home">الرئيسية</a></li>
+<li><a href="#expertise">الخبرات</a></li>
+<li><a href="#services">الخدمات</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>الدعم الفني</h4>
+<ul>
+<li><a href="#contact">تواصل معنا</a></li>
+<li><a href="#pricing">الأسعار</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+&copy; 2026 EG Security. جميع الحقوق محفوظة.
+</div>
+</div>
+</footer>
 
 <script>
-    // تفعيل التبديل الليلي
-    const themeToggleBtn = document.getElementById('themeToggleBtn');
-    themeToggleBtn.addEventListener('click', () => {
-        const body = document.body;
-        const currentTheme = body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        body.setAttribute('data-theme', newTheme);
-        themeToggleBtn.querySelector('i').className = (newTheme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon');
-    });
+// 1. نظام تبديل المظهر (Dark / Light Theme)
+const themeToggleBtn = document.getElementById('themeToggleBtn');
+themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = document.body.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+        document.body.removeAttribute('data-theme');
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    } else {
+        document.body.setAttribute('data-theme', 'dark');
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    }
+});
 
-    // منطق بوابة فودافون كاش
-    const serviceSelect = document.getElementById('serviceSelect');
-    const vcashGateway = document.getElementById('vcashGateway');
-    serviceSelect.addEventListener('change', () => {
-        vcashGateway.style.display = serviceSelect.value ? 'block' : 'none';
-    });
+// 2. تفعيل التوجيه التلقائي لبوابة فودافون كاش عند اختيار الخدمة
+const serviceSelect = document.getElementById('serviceSelect');
+const vcashGateway = document.getElementById('vcashGateway');
+const vcashInput = document.getElementById('vcash_number');
 
-    // تفعيل زر الإرسال بناءً على الموافقة
-    const checkbox = document.getElementById('legalAgree');
-    const submitBtn = document.getElementById('submitBtn');
-    checkbox.addEventListener('change', () => {
-        submitBtn.disabled = !checkbox.checked;
-    });
+serviceSelect.addEventListener('change', (e) => {
+    if(e.target.value !== "") {
+        vcashGateway.style.display = 'block';
+        vcashInput.setAttribute('required', 'required');
+    } else {
+        vcashGateway.style.display = 'none';
+        vcashInput.removeAttribute('required');
+    }
+});
 
-    // حماية البريد الإلكتروني من البوتات
-    window.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('secure-email-link').innerHTML = 
-            '<a href="mailto:mostafa.mahmoud.egp@gmail.com">mostafa.mahmoud.egp@gmail.com</a>';
-    });
+// 3. حقن وتأمين بريد مصطفى محمود الجديد بشكل مشفر ومحمي من كاشفات الأسبام
+window.addEventListener('DOMContentLoaded', () => {
+    const user = "mostafa.mahmoud.egp";
+    const domain = "gmail.com";
+    const emailWrapper = document.getElementById('secure-email-link');
+    emailWrapper.innerHTML = `<a href="mailto:${user}@${domain}" style="color:#0055ff; text-decoration:none; font-weight:800;">${user}@${domain}</a>`;
+});
+
+// 4. التحكم في تفعيل زر الإرسال بناءً على الشروط القانونية
+const legalAgree = document.getElementById('legalAgree');
+const submitBtn = document.getElementById('submitBtn');
+legalAgree.addEventListener('change', (e) => {
+    submitBtn.disabled = !e.target.checked;
+});
+
+// 5. حماية متقدمة ضد البوتات والـ Spam (Honeypot Verification)
+document.getElementById('secureForm').addEventListener('submit', function(e) {
+    const honeyTrap = document.getElementById('honey_trap').value;
+    if(honeyTrap !== "") {
+        e.preventDefault();
+        console.warn('Bot submission blocked.');
+        alert('حدث خطأ غير متوقع، يرجى تحديث الصفحة والمحاولة مجدداً.');
+    }
+});
 </script>
-
-<!-- Microsoft Clarity للتحليل -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/wvz0prgvo1";
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wvz0prgvo1");
-</script>
-
 </body>
 </html>
