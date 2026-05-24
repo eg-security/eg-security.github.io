@@ -7,7 +7,7 @@
 <title>EG Security | Global Account Recovery & Cybersecurity</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght=400;600;700;900&display=swap');
 
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{font-family:'Cairo',sans-serif;direction:rtl;line-height:1.6;transition: background 0.4s ease, color 0.4s ease;text-size-adjust:100%;-webkit-text-size-adjust:100%}
@@ -141,7 +141,7 @@ nav{position:fixed;top:0;left:0;width:100%;background: var(--nav-bg);backdrop-fi
 .price-features li i{color:#25d366;margin-left:10px}
 
 .process-steps{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;max-width:1000px;margin:0 auto}
-.step{text-align:center;max-width:220px;flex:1 1 180px;padding:10px}
+.step grid{text-align:center;max-width:220px;flex:1 1 180px;padding:10px}
 .step-num{width:55px;height:55px;background:linear-gradient(135deg,#0055ff,#0033cc);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:900;margin:0 auto 15px;box-shadow:0 6px 15px rgba(0,85,255,0.2)}
 .step h4{color: var(--text-main);margin-bottom:10px;font-size:1.1rem;font-weight:700}
 .step p{color: var(--text-muted);font-size:0.85rem;line-height:1.5}
@@ -654,9 +654,9 @@ serviceSelect.addEventListener('change', (e) => {
     }
 });
 
-// 3. تأكيد وتثبيت إيميل الـ Gmail الأصلي مشفراً لحمايته من الاسبام والزواحف الخبيثة
+// 3. حقن وتأمين بريد مصطفى محمود الجديد بشكل مشفر ومحمي من كاشفات الأسبام
 window.addEventListener('DOMContentLoaded', () => {
-    const user = "eg.security.help";
+    const user = "mostafa.mahmoud.egp";
     const domain = "gmail.com";
     const emailWrapper = document.getElementById('secure-email-link');
     emailWrapper.innerHTML = `<a href="mailto:${user}@${domain}" style="color:#0055ff; text-decoration:none; font-weight:800;">${user}@${domain}</a>`;
